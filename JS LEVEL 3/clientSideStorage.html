@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Client Side Storage</title>
+</head>
+<body>
+    <p>local storage </p>
+    <p>session storage  </p>
+    <script >
+        console.log("hi this sohel");
+let impArray=['vlovo','toyota','maruti' ,'Tata']
+//Add a key vlue pair inside localStorage
+localStorage.setItem("Name", "sohel");
+localStorage.setItem("Name2", "Irfan khan");
+localStorage.setItem('Cars',JSON.stringify(impArray) );
+
+//Clear the entire local Storage
+// localStorage.clear();
+
+//retrive an item from localStorage 
+let  Name= localStorage.getItem('Name2');
+console.log(Name);
+
+  Name=JSON.parse( localStorage.getItem('Cars'));
+console.log(Name);
+//Add a key vlue pair inside sessionStorage
+sessionStorage.setItem('NAME',"Aawez");
+sessionStorage.setItem('Four Wheeler Brand Names',JSON.stringify(impArray))
+
+//retrive an item from sessionStorage
+let  name= sessionStorage.getItem('Name2');
+console.log(name);
+    </script>
+</body>
+</html> 

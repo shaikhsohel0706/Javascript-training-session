@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Storage Example</title>
+</head>
+<body>
+<input type="text" id="textInput">
+<button onclick="saveToSession()">Save to Session Storage</button>
+<button onclick="retrieveFromSession()">Retrieve from Session Storage</button>
+
+<script>
+  function saveToSession() {
+    const inputValue = document.getElementById('textInput').value;
+    sessionStorage.setItem('userInput', inputValue);
+    console.log('Data saved to session storage:', inputValue);
+  }
+
+  function retrieveFromSession() {
+    const storedValue = sessionStorage.getItem('userInput');
+    if (storedValue) {
+      console.log('Retrieved data from session storage:', storedValue);
+    } else {
+      console.log('No data found in session storage');
+    }
+  }
+</script>
+
+</body>
+</html>

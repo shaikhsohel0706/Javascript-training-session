@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>error handling in js</h2>
+    <p>try catch...</p>
+
+    <script>
+      // Syntax error :Missing closing parenthesis
+      try {
+        eval('alert("Hello World"'); 
+      } catch (error) {
+        console.error("Syntax error:", error.message);
+      }
+        // ReferenceError: Occurs when trying to reference a variable that has
+        // not been declared.
+        console.log(error.massage);
+      try {
+        add();
+      } catch (error) {
+        console.log(error.name);
+        console.log(error.stack);
+      }
+      // TypeError: Cannot read property 'toUpperCase' of null
+      try {
+        let x = null;
+        x.toUpperCase(); 
+      } catch (error) {
+        console.error("Type error:", error.message);
+      }
+
+      //You can use the throw statement to create a custom error or throw a predefined error.
+      function divide(a, b) {
+        if (b === 0) {
+          throw new Error("Division by zero is not allowed.");
+        }
+        return a / b;
+      }
+
+      try {
+        let result = divide(10, 0);
+        console.log(result); // This won't be executed
+      } catch (error) {
+        console.error("An error occurred:", error.message);
+      }
+    </script>
+  </body>
+</html>

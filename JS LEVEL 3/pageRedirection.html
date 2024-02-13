@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page Redirection </title>
+</head>
+<body>
+    <p>Redirect to page Based on User Input</p>
+<select id="dropdown">
+    <option value="">Select an option</option>
+    <option value="https://www.Google.com">Google</option>
+    <option value="https://www.Facebook.com">Facebook</option>
+    <option value="https://www.Instagram.com">Instagram</option>
+  </select>
+  <button onclick="redirect()">Go</button><br><br>
+<label for="">
+    redirect with window.location.href:<button onclick="redirectWithHref()">Redirect</button>
+</label><br><br>
+  
+ <label for="">Redirect with window.location.replace() :<button onclick="redirectWithReplace()">Redirect</button></label><br><br>
+
+ <label for="">Redirect with window.location.assign()<button onclick="redirectWithAssign()">Redirect </button></label><br><br>
+
+ <label for=""> Redirect with anchor tag &nbsp; <a href="https://www.w3schools.com"> Redirect</a>
+ </label><br><br>
+
+  <label for="">Redirect to page on  form submition &nbsp; <form action="https://www.youtube.com" method="get">
+    <input type="submit" value="Redirect">
+  </form></label>
+  
+  <script>
+    function redirect() {
+      var selectedOption = document.getElementById("dropdown").value;
+      if (selectedOption) {
+        window.location.href = selectedOption;
+      } else {
+        alert("Please select an option");
+      }
+    }
+
+    function redirectWithHref() {
+    // Redirect to a new page
+    window.location.href = "https://www.Google.com";
+  }
+
+  function redirectWithReplace() {
+    // Redirect to a new page, replacing the current page in the browser history
+    window.location.replace("https://www.facebook.com");
+  }
+
+  function redirectWithAssign() {
+    // Redirect to a new page, adding a new entry to the browser history
+    window.location.assign("https://www.Instagram.com");
+  }
+
+  </script>
+  
+</body>
+</html>

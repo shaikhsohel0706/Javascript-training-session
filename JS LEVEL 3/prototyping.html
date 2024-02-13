@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> prototype in js</title>
+</head>
+<body>
+    <h3>prototype inheritence in javascript</h3>
+    <p>prototypes are the mechanism by which js objects inherit feature from one another.</p>
+    <script>
+        let users ={
+            getFullName:function(){
+                return this.name + "" + this.lastName
+            },
+            getAge:function(){
+               let age=new Date().getFullYear() - this.brithYear;
+               return age
+            }
+        }    
+        let student ={
+            name: "sohel",
+            lastName:"shaikh",
+            brithYear:1999,
+    // getAge:users.getAge //,we can do by using this method also but it will impact diffrently
+
+            // getFullName:function(){
+            //     return this.name + "" + this.lastName
+            // },
+            // getAge:function(){
+            //    let age=new Date().getFullYear() - this.brithYear;
+            //    return age
+            // }
+        }
+
+        let  teacher ={
+            name: "Azher",
+            lastName:"shaikh",
+            brithYear:1980,
+            // getAge:users.getAge //,we can do by using this method also but it will impact diffrently
+
+             // getFullName:function(){
+            //     return this.name + "" + this.lastName
+            // },
+            // getAge:function(){
+            //    let age=new Date().getFullYear() - this.brithYear;
+            //    return age
+            // }
+        }
+
+        teacher.__proto__=users;
+        student.__proto__=users;
+
+        console.log(student.getAge());
+        console.log(teacher.getAge());
+
+        //we can also make our custom prototype with Object and string aslo
+        // to try this in browser console you can write student.myAppData
+        Object.prototype.myAppData=" this is custom prototype  in object "  
+
+        Object.prototype.myData=function(){
+            return "this is custom funtion by using  for object"
+        }
+    // to try this in browser console you can write student.myData()
+        String.prototype.otherData="this is proto for string"
+            // to try this in browser console you can write student.name.otherData
+    </script>
+</body>
+</html>

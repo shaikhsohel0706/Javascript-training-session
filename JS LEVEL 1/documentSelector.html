@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>seclectors</title>
+  <!-- <script src="documentSelectors.js"></script> -->
+</head>
+<body>
+<h2>getElementById Example</h2>
+  <div id="myElement">This is a div with an ID</div>
+
+<h2>getElementsByClassName Example</h2>
+   <p class="myClass">This is a paragraph with a class</p>
+
+<h2>getElementsByTagName Example</h2>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+<h2>querySelector Example</h2>
+  <div id="container">
+    <p class="myClass">This is a paragraph inside a div</p>
+
+<h2>innerHTML Example</h2>
+    <div id="myElement">Old Content</div>
+
+<h2>addEventListener Example</h2>
+    <button id="myButton">Click me</button>
+  <script> 
+const elementById = document.getElementById('myElement');
+    console.log(elementById.textContent); // Outputs: This is a div with an ID
+
+    const elementsByClass = document.getElementsByClassName('myClass');
+    elementsByClass[0].style.fontSize = '30px';
+
+    const elementsByTag = document.getElementsByTagName('li');
+    console.log(elementsByTag.length); // Outputs: 3
+
+    const elementBySelector = document.querySelector('#container .myClass');
+    elementBySelector.style.fontWeight = 'bold';
+
+    const elementsBySelectorAll = document.querySelectorAll('li');
+    elementsBySelectorAll.forEach(li => li.style.color = 'green');
+
+    const element = document.getElementById('myElement');
+    console.log(element.innerHTML); // Outputs: Old Content
+    element.innerHTML = '<p>New Content</p>';
+
+    const button = document.getElementById('myButton');
+    button.addEventListener('click', function() {
+      alert('Button Clicked!');
+    });
+</script>
+   
+  <style>
+    .myClass {
+      color: blue;
+    }
+  </style>
+</body>
+</html>

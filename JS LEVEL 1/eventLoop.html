@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventLoop</title>
+  </head>
+  <body>
+    <h1>event loop in js</h1>
+    <script>
+      console.log("Start");
+     
+      setTimeout(function timeout() {
+        console.log(" successfully executed after 3sec");
+      }, 3000);
+      console.log("End.");
+       
+    </script>
+  </body>
+</html>
+<!-- The event loop is the mechanism in JavaScript that allows asynchronous operations to be 
+    executed without blocking the main thread. -->
+
+
+<!-- The event loop picks up the callback from the callback queue and pushes it onto the call
+ stack for execution. -->
+<!-- heap --all variable which are used in our program all are sotres in Heap -->
+
+<!-- code run hote hi pehle console.log ("hi") call hoga uske baad
+setTimeout execute hoga or jaise hi setTimeout (ke andar callback function) dikhega callstack
+ ke andar vo web API me chala jaiga or after 5 sec vo callback Queue me chala jaiga fr
+ EventLoop ka kaam hai time to time task uthake callBack Queue se callStack me dalta rahega  -->
+
+<!-- setTimeout and fetch api are web apis -->
+

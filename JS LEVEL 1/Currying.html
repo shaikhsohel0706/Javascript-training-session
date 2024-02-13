@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>currying in javascript</h2>
+    <p>Currying is a technique in JavaScript where a function with multiple parameters is 
+       transformed into a sequence of functions, each taking a single parameter. 
+       The curried function returns a new function for each parameter until all the parameters
+       are satisfied, and then it finally returns the result.</p>
+    <script>
+      //without currying
+      function add(x, y, z) {
+        return x + y + z;
+      }
+      console.log(add(2, 3, 4));  
+
+      //with currying
+      function curryAdd(x) {
+        return function (y) {
+          return function (z) {
+            return x + y + z;
+          };
+        }; 
+      }
+
+      const result = curryAdd(2)(3)(4);
+      console.log(result);  
+      //   In the curried version, curryAdd is a function that takes one parameter (x)
+      //   and returns another function that takes the second parameter (y), and so on.
+      //   Each returned function takes a single parameter and eventually calculates the
+      //    final result when all parameters are provided.
+    </script>
+  </body>
+</html>
